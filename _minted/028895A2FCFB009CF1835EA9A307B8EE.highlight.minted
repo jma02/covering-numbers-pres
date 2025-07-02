@@ -1,0 +1,20 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{preorders}\PYG{p}{(}\PYG{n}{n}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{stack}\PYG{p}{,} \PYG{n}{order} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{p}{]}
+    \PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{dfs}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+        \PYG{k}{if} \PYG{o+ow}{not} \PYG{n}{stack}\PYG{p}{:}
+            \PYG{k}{yield} \PYG{n+nb}{tuple}\PYG{p}{(}\PYG{n}{order}\PYG{p}{)}
+            \PYG{k}{return}
+        \PYG{n}{s}\PYG{p}{,} \PYG{n}{e} \PYG{o}{=} \PYG{n}{stack}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{p}{)}
+        \PYG{k}{for} \PYG{n}{k} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,} \PYG{n}{e} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{:}
+            \PYG{n}{order}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{k}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{n}{e}\PYG{p}{:} \PYG{n}{stack}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{p}{(}\PYG{n}{k} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{e}\PYG{p}{)}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{k} \PYG{o}{\PYGZgt{}} \PYG{n}{s}\PYG{p}{:} \PYG{n}{stack}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,} \PYG{n}{k} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}
+            \PYG{k}{yield from} \PYG{n}{dfs}\PYG{p}{(}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{k} \PYG{o}{\PYGZgt{}} \PYG{n}{s}\PYG{p}{:} \PYG{n}{stack}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{p}{)}
+            \PYG{k}{if} \PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{n}{e}\PYG{p}{:} \PYG{n}{stack}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{p}{)}
+            \PYG{n}{order}\PYG{o}{.}\PYG{n}{pop}\PYG{p}{(}\PYG{p}{)}
+        \PYG{n}{stack}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,} \PYG{n}{e}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n}{stack}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{n}\PYG{p}{)}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{dfs}\PYG{p}{(}\PYG{p}{)}
+\end{MintedVerbatim}
