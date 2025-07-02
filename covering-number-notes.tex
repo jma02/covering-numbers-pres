@@ -115,11 +115,11 @@ When $d$ is known, we may drop it from the notation $N(\epsilon, T, d)$, or even
     (0,0) -- (0.8,0) node[midway, yshift=-10pt] {$0.2$};
 
 \end{tikzpicture}
-\caption{A $.2$-covering of the unit square $[0,1]^2$ under the $l^\infty$ metric.}
+\caption{A $.1$-covering of the unit square $[0,1]^2$ under the $l^\infty$ metric.}
   \label{fig:2}
 \end{figure}
 
-See \cref{fig:2}. We can see that when $\epsilon = .2$, a minimal $\epsilon$-cover of $[0,1]^2$ is
+See \cref{fig:2}. We can see that when $\epsilon = .1$, a minimal $\epsilon$-cover of $[0,1]^2$ is
 given by tiling the square. (It helps that $.2 \mid 1$, in this case.) 
 Generalizing to arbitrary $\epsilon > 0$, we can show that
 ``tiling" the square provides an $\epsilon$-cover with $\lceil \frac{1}{\epsilon}
@@ -283,7 +283,7 @@ Thus the scaling of covering and packing numbers is the same.
     For any integers $n,d \ge 2$, and $\epsilon \in (\log^{0.5001}{n/ \sqrt{\min\{n,d\}}}, 1)$, there exists
     a set of points $X \subset \R^d$ of size $n$ such that any map $f : X \to \R^m$ providing (1)
     must have $$
-    m = \Omega(\epsilon^{-2}\log{\epsilon^2n}).
+    m = \Omega(\epsilon^{-2}\log(\epsilon^2n)).
     $$
   \end{theorem}
   Their proof uses covering numbers, but it is too long to cover in this presentation.
